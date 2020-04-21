@@ -20,6 +20,7 @@ const ShowNotes = () => {
             <header className="head">
             Welcome to fabulous Note App *Username*!
             </header>
+        <div className="all-notes">
         <button name="noteButt" className="add-note"
                 onClick={() => {
                     function uuidv4() {
@@ -44,7 +45,7 @@ const ShowNotes = () => {
                     setNotes(newStateNotes)
                 }}
         >Add Note</button>
-        <div className="all-notes">{stateNotes.map((note, index) => {
+        {stateNotes.map((note, index) => {
             return (
                 <Tasks 
                     key={index} 

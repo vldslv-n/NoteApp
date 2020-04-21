@@ -8,6 +8,7 @@ html, body, #app {
 }
 .container {
    height: 100%;
+   width: 960px;
    max-width: 960px;
 
 }
@@ -22,7 +23,8 @@ html, body, #app {
     width: 80px;
 }
 .all-notes {
+    display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     width: 100%;
-    
 }

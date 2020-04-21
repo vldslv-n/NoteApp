@@ -1,6 +1,6 @@
 .single-note {
     position: relative;
-    background-color: #8FBC8F;
+    background-color: #DEB887;
     color: black;
     margin: 10px;
     margin-left: 25px;
@@ -8,9 +8,12 @@
     
 }
 .show-note {
+    display: flex;
     width: 100px;
     height: 100px;
     cursor: pointer;
+    justify-content: center;
+    align-items: center;
 }
 
 .del-butt {

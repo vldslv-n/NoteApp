@@ -14,17 +14,25 @@ html, body, #app {
 }
 .head {
     width: 100%;
-    margin: auto;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    text-shadow: 1px 1px 2px grey;
+    font-size: 40px;
+    background-image: url('./stars.gif');
     padding: 10px;
+    margin-bottom: 40px;
 
 }
-.add-note {
-    height: 80px;
-    width: 80px;
+.note-size {
+    height: 100px;
+    width: 100px;
+    border-radius: 4px;
+    border: 1px solid #483D8B;
 }
 .all-notes {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: flex-start;
     width: 100%;
 }

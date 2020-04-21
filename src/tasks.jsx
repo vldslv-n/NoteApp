@@ -1,4 +1,6 @@
 import React, {useState} from "react"
+import "./tasks.css"
+import "./index.css"
 
 const Notes = (props) => {
     const {stateNotes, setNotes, children} = props
@@ -8,8 +10,8 @@ const Notes = (props) => {
     
 
     return (
-        <div>
-            <div onClick={() => setShow(!show)}>
+        <div className="single-note note-size">
+            <div className="show-note" onClick={() => setShow(!show)}>
                 {children.name}</div>
             <div>
                 {show && 
@@ -34,7 +36,7 @@ const Notes = (props) => {
                     />
                 }
             </div>
-            <button name='delButt'
+            <button name='delButt' className="del-butt"
                     onClick={() => {
                         stateNotes.splice(children.id, 1)
                         let newStateNotes = stateNotes.map((element) => {

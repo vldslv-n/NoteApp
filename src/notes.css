@@ -1,11 +1,10 @@
 .single-note {
     position: relative;
-    background-color: #DEB887;
+    background-color: rgb(250, 223, 140);
     color: black;
     margin: 10px;
     margin-left: 25px;
     margin-right: 25px;
-    
 }
 .show-note {
     display: flex;

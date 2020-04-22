@@ -1,6 +1,7 @@
 import React, {useState} from "react"
 import "./notes.css"
 import "./index.css"
+import Editor from "./editor.jsx"
 
 const Notes = (props) => {
     const {stateNotes, setNotes, children} = props
@@ -13,42 +14,14 @@ const Notes = (props) => {
                 {children.name}
             </div>
             <div className="note-edit">
-                {show && 
-                    <textarea 
-                        value={children.content} 
-                        onChange={(event) => {
-                            let nextNotes = stateNotes.map((element) => {
-                                if(element.id == children.id) {
-                                    let nextElement = {
-                                        ...element,
-                                        content: event.target.value
-                                    }
-                                    return nextElement
-                                } else {
-                                    return element
-                                }
-                            })
-
-                            setNotes(nextNotes)
-                            }
-                        }
-                    />
-                }
+                {show && <Editor
+                            stateNotes={stateNotes}
+                            setNotes={setNotes}
+                            children={children}
+                            show={show}
+                            setShow={setShow}
+                            />}
             </div>
-            <button name='delButt' className="del-butt"
-                    onClick={() => {
-                        stateNotes.splice(children.id, 1)
-                        let newStateNotes = stateNotes.map((element) => {
-                            let i = 0
-                            do {
-                                return element;
-                                i++;
-                            } while (i==stateNotes.length++)
-                        })
-                        setNotes(newStateNotes)
-                        console.log(newStateNotes)    
-                    }}
-            >X</button>
         </div>
     )
 }

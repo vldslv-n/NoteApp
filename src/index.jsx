@@ -29,10 +29,9 @@ const ShowNotes = () => {
                           (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
                         );}
                     let newId = uuidv4()
-                    let nameNote = 'New Note' //'note' + stateNotes.length
                     let newNote = {
                         id: newId,
-                        name: nameNote,
+                        name: 'New Note',
                         content: ''
                     }
                     stateNotes.push(newNote)

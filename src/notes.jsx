@@ -13,7 +13,7 @@ const Notes = (props) => {
                     onClick={() => setShow(!show)}>
                 {children.name}
             </div>
-            <div className="note-edit">
+            <div>
                 {show && <Editor
                             stateNotes={stateNotes}
                             setNotes={setNotes}

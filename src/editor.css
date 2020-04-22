@@ -1,3 +1,13 @@
+.opacitier {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background-color: black;
+    opacity: .5;
+}
 .editor-container {
     display: flex;
     position: fixed;
@@ -5,6 +15,49 @@
     bottom: 0;
     left: 0;
     right: 0;
+    z-index: 1;
     align-items: center;
     justify-content: center;
+}
+.editor {
+    height: 80%;
+    width: 40%;
+    z-index: 3;
+    background-color: white;
+    box-shadow: 0px 0px 50px black;
+    position: relative;
+}
+.del-butt {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    outline: none;
+}
+.back-butt {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    outline: none;
+}
+.last-edit {
+    position: absolute;
+    top: 10px;
+    left: 40%;
+}
+.note-name {
+position: absolute;
+top: 8%;
+left: 1%;
+outline: none;
+resize: none;
+height: 20px;
+width: auto;
+border: none;
+}
+.note-field {
+position: absolute;
+top: 15%;
+left: 1%;
+outline: none;
+resize: none;
 }

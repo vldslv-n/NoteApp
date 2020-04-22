@@ -2,6 +2,8 @@ import React, {useState} from "react"
 import ReactDOM from "react-dom"
 
 import Notes from "./notes.jsx"
+import Editor from "./editor.jsx"
+
 import "./reset.css"
 import "./index.css"
 import "./button.css"
@@ -31,7 +33,8 @@ const ShowNotes = () => {
                     let newId = uuidv4()
                     let newNote = {
                         id: newId,
-                        name: 'New Note',
+                        lastEdit: '',
+                        name: '',
                         content: ''
                     }
                     stateNotes.push(newNote)

@@ -13,7 +13,7 @@ const Notes = (props) => {
         <div className="single-note note-size">
             <div className="show-note" onClick={() => setShow(!show)}>
                 {children.name}</div>
-            <div>
+            <div className="note-edit">
                 {show && 
                     <textarea 
                         value={children.content} 
@@ -58,5 +58,3 @@ const Notes = (props) => {
 
 
 export default Notes
-
-// onChange={(event) => {

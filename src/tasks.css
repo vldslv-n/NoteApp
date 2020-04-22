@@ -30,3 +30,10 @@
     background-color: black;
     color: white;
 }
+.note-edit {
+    height: 960px;
+    width: 960px;
+    max-width: 960px;
+    justify-content: center;
+    align-items: center;
+}

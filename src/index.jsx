@@ -1,7 +1,7 @@
 import React, {useState} from "react"
 import ReactDOM from "react-dom"
 
-import Tasks from "./tasks.jsx"
+import Notes from "./notes.jsx"
 import "./reset.css"
 import "./index.css"
 import "./button.css"
@@ -48,12 +48,12 @@ const ShowNotes = () => {
         >Add Note</button>
         {stateNotes.map((note, index) => {
             return (
-                <Tasks 
+                <Notes 
                     key={index} 
                     setNotes={setNotes}
                     stateNotes={stateNotes}>
                     {note}
-                </Tasks>)})}
+                </Notes>)})}
         </div>
         </div>
     )

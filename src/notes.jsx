@@ -1,18 +1,17 @@
 import React, {useState} from "react"
-import "./tasks.css"
+import "./notes.css"
 import "./index.css"
 
 const Notes = (props) => {
     const {stateNotes, setNotes, children} = props
     const [show, setShow] = useState(false)
-
     
-    
-
     return (
         <div className="single-note note-size">
-            <div className="show-note" onClick={() => setShow(!show)}>
-                {children.name}</div>
+            <div    className="show-note" 
+                    onClick={() => setShow(!show)}>
+                {children.name}
+            </div>
             <div className="note-edit">
                 {show && 
                     <textarea 

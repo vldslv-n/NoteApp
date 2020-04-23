@@ -1,5 +1,25 @@
 import React, { useState } from "react"
+import marked from "marked"
 import "./editor.css"
+
+marked.setOptions({
+    "baseUrl": null,
+    "breaks": false,
+    "gfm": true,
+    "headerIds": true,
+    "headerPrefix": "",
+    "highlight": null,
+    "langPrefix": "language-",
+    "mangle": true,
+    "pedantic": false,
+    "sanitize": false,
+    "sanitizer": null,
+    "silent": false,
+    "smartLists": false,
+    "smartypants": false,
+    "tokenizer": null,
+    "xhtml": false
+})
 
 Date.prototype.today = function () {
     return ((this.getDate() < 10) ? "0" : "") + this.getDate() + "/" + (((this.getMonth() + 1) < 10) ? "0" : "") + (this.getMonth() + 1) + "/" + this.getFullYear();
@@ -12,11 +32,15 @@ const Editor = (props) => {
     const { stateNotes, setNotes, children, show, setShow } = props
     let lastEdit = "Last Edit: " + new Date().today() + " @ " + new Date().timeNow()
     console.log(lastEdit)
+    const createMarkup = () => {
+        return { __html: marked(children.content) };
+    }
+
     return (
         <div className="editor-container">
             <div className="opacitier" />
             <div className="editor">
-                <textarea
+                {/* <textarea
                     className="note-name"
                     placeholder="Name your Note"
                     value={children.name}
@@ -35,8 +59,9 @@ const Editor = (props) => {
                         })
                         setNotes(nextNotesName)
                     }}
-                />
+                /> */}
                 <textarea
+                    id='entire-note'
                     className="note-field"
                     placeholder="Type some text"
                     value={children.content}
@@ -57,6 +82,7 @@ const Editor = (props) => {
                     }
                     }
                 />
+                <div dangerouslySetInnerHTML={createMarkup()} />
                 <button name='delButt' className="del-butt"
                     onClick={() => {
                         stateNotes.splice(children.id, 1)
@@ -77,7 +103,7 @@ const Editor = (props) => {
                 >Back</button>
                 <div className="last-edit">{children.lastEdit}</div>
             </div>
-        </div>
+        </div >
     )
 }
 

@@ -5,7 +5,7 @@
     left: 0;
     right: 0;
     z-index: 2;
-    background-color: black;
+    background-color: #333;
     opacity: .5;
 }
 .editor-container {
@@ -20,11 +20,11 @@
     justify-content: center;
 }
 .editor {
-    height: 80%;
-    width: 40%;
+    height: 90%;
+    width: 70%;
     z-index: 3;
-    background-color: white;
-    box-shadow: 0px 0px 50px black;
+    background-color: rgb(255, 254, 252);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, .15);
     position: relative;
 }
 .del-butt {
@@ -44,7 +44,7 @@
     top: 10px;
     left: 40%;
 }
-.note-name {
+/* .note-name {
 position: absolute;
 top: 8%;
 left: 1%;
@@ -53,7 +53,7 @@ resize: none;
 height: 20px;
 width: auto;
 border: none;
-}
+} */
 .note-field {
 position: absolute;
 top: 15%;

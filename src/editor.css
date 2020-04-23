@@ -44,16 +44,7 @@
     top: 10px;
     left: 40%;
 }
-/* .note-name {
-position: absolute;
-top: 8%;
-left: 1%;
-outline: none;
-resize: none;
-height: 20px;
-width: auto;
-border: none;
-} */
+
 .note-field {
 position: absolute;
 top: 15%;

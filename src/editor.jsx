@@ -1,3 +1,5 @@
+// TODO: []: Добавить кнопку режима редактирования. Рендерит по клику textarea или Markdown
+
 import React, { useState } from "react"
 import marked from "marked"
 import "./editor.css"
@@ -27,12 +29,12 @@ Date.prototype.today = function () {
 Date.prototype.timeNow = function () {
     return ((this.getHours() < 10) ? "0" : "") + this.getHours() + ":" + ((this.getMinutes() < 10) ? "0" : "") + this.getMinutes() + ":" + ((this.getSeconds() < 10) ? "0" : "") + this.getSeconds();
 }
+let lastEdit = "Last Edit: " + new Date().today() + " @ " + new Date().timeNow()
 
 const Editor = (props) => {
     const { stateNotes, setNotes, children, show, setShow } = props
-    let lastEdit = "Last Edit: " + new Date().today() + " @ " + new Date().timeNow()
-    console.log(lastEdit)
-    const createMarkup = () => {
+    const [stateEdit, setEdit] = useState(false)
+    const createMarkdown = () => {
         return { __html: marked(children.content) };
     }
 
@@ -40,49 +42,31 @@ const Editor = (props) => {
         <div className="editor-container">
             <div className="opacitier" />
             <div className="editor">
-                {/* <textarea
-                    className="note-name"
-                    placeholder="Name your Note"
-                    value={children.name}
-                    onChange={(event) => {
-                        let nextNotesName = stateNotes.map((element) => {
-                            if (element.id == children.id) {
-                                let nextElement = {
-                                    ...element,
-                                    name: event.target.value,
-                                    lastEdit: lastEdit
+                {stateEdit === false ?
+                    <textarea
+                        id='entire-note'
+                        className="note-field"
+                        placeholder="Type some text"
+                        value={children.content}
+                        onChange={(event) => {
+                            let nextNotes = stateNotes.map((element) => {
+                                if (element.id == children.id) {
+                                    let nextElement = {
+                                        ...element,
+                                        content: event.target.value,
+                                        lastEdit: lastEdit
+                                    }
+                                    return nextElement
+                                } else {
+                                    return element
                                 }
-                                return nextElement
-                            } else {
-                                return element
-                            }
-                        })
-                        setNotes(nextNotesName)
-                    }}
-                /> */}
-                <textarea
-                    id='entire-note'
-                    className="note-field"
-                    placeholder="Type some text"
-                    value={children.content}
-                    onChange={(event) => {
-                        let nextNotes = stateNotes.map((element) => {
-                            if (element.id == children.id) {
-                                let nextElement = {
-                                    ...element,
-                                    content: event.target.value,
-                                    lastEdit: lastEdit
-                                }
-                                return nextElement
-                            } else {
-                                return element
-                            }
-                        })
-                        setNotes(nextNotes)
-                    }
-                    }
-                />
-                <div dangerouslySetInnerHTML={createMarkup()} />
+                            })
+                            setNotes(nextNotes)
+                        }
+                        }
+                    />
+                    : <div dangerouslySetInnerHTML={createMarkdown()} />
+                }
                 <button name='delButt' className="del-butt"
                     onClick={() => {
                         stateNotes.splice(children.id, 1)
@@ -98,9 +82,13 @@ const Editor = (props) => {
                     }}
                 >X</button>
                 <button
-                    onClick={() => { setShow(false) }}
                     className='back-butt'
+                    onClick={() => { setShow(false) }}
                 >Back</button>
+                <button
+                    className='edit-btn'
+                    onClick={() => { setEdit(!stateEdit) }}
+                />
                 <div className="last-edit">{children.lastEdit}</div>
             </div>
         </div >
@@ -108,4 +96,3 @@ const Editor = (props) => {
 }
 
 export default Editor
-

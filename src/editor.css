@@ -29,26 +29,59 @@
 }
 .del-butt {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    bottom: 1px;
+    width: 40px;
     outline: none;
+    border: 0;
+    font-size: 24px;
+    cursor: pointer;
+    color: red;
 }
 .back-butt {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 8px;
+    left: 5px;
     outline: none;
+    cursor: pointer;
+    border: 0;
+    font-size: 23px;
+}
+.edit-btn {
+    position: absolute;
+    left: 2px;
+    top: 50px;
+    outline: none;
+    cursor: pointer;
+    border: 0;
+    font-size: 24px;
+    color: teal;
 }
 .last-edit {
     position: absolute;
-    top: 10px;
-    left: 40%;
+    bottom: 14px;
+    left: 42%;
+    font-size: 12px;
+    color: gray;
 }
 
 .note-field {
 position: absolute;
-top: 15%;
-left: 1%;
+top: 1px;
+left: 6%;
+width: 93%;
+height: 95%;
 outline: none;
 resize: none;
+border: none;
+background-color: inherit;
+white-space: nowrap;
+overflow: auto;
+}
+.markdown-view {
+    position: absolute;
+top: 1px;
+left: 6%;
+width: 93%;
+height: 95%;
+background-color: inherit;
 }

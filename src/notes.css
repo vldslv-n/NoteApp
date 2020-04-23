@@ -5,6 +5,7 @@
     margin: 10px;
     margin-left: 25px;
     margin-right: 25px;
+    box-sizing: content-box;
 }
 .show-note {
     display: flex;

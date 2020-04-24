@@ -12,15 +12,17 @@ const Notes = (props) => {
     }
 
     return (
-        <div className="single-note note-size">
+        <div className="single-note note-size"
+        // onClick={() => { }}
+        >
             <div className="scaled-markdown"
                 dangerouslySetInnerHTML={createMarkdown()}
                 onClick={() => setShow(!show)}
             />
-            <div
+            {/* <div
                 className="show-note"
                 onClick={() => setShow(!show)}
-            />
+            /> */}
             <div>
                 {show &&
                     <Editor

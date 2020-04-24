@@ -31,10 +31,10 @@
 .del-butt {
     position: absolute;
     bottom: 1px;
-    width: 40px;
+    width: 38px;
     outline: none;
     border: 0;
-    font-size: 24px;
+    font-size: 23px;
     cursor: pointer;
     color: red;
 }
@@ -59,7 +59,7 @@
 }
 .last-edit {
     position: relative;
-    top: 47%; 
+    top: 48%; 
     margin: auto;
     font-size: 12px;
     color: gray;
@@ -75,7 +75,6 @@ outline: none;
 resize: none;
 border: none;
 background-color: inherit;
-white-space: nowrap;
 overflow: auto;
 }
 .markdown-view {
@@ -85,4 +84,5 @@ left: 6%;
 width: 92%;
 height: 96%;
 background-color: inherit;
+overflow: auto;
 }

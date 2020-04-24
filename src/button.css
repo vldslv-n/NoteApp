@@ -15,7 +15,7 @@
 .add-butt:hover {
   color: rgb(186, 186, 186);
   box-shadow: 0 8px 16px rgba(0, 0, 0, .15);
-  
+  transform: scale(1.2);
 }
 .svg {
   height: 1em;

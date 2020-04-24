@@ -13,6 +13,7 @@
     cursor: pointer;
     justify-content: center;
     align-items: center;
+    transition-duration: 0.3s;
 }
 
 .scaled-markdown {

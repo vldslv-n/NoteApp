@@ -48,9 +48,9 @@ const Editor = (props) => {
                     <textarea
                         className="note-field"
                         placeholder="Type some text"
-                        cols="30"
-                        rows="3"
-                        wrap="soft"
+                        rows='10'
+                        cols='20'
+                        wrap="hard"
                         value={children.content}
                         onChange={(event) => {
                             let nextNotes = stateNotes.map((element) => {

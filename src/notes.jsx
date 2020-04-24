@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import marked from "marked"
 import "./notes.css"
 import "./index.css"
 import Editor from "./editor.jsx"
@@ -6,14 +7,20 @@ import Editor from "./editor.jsx"
 const Notes = (props) => {
     const { stateNotes, setNotes, children } = props
     const [show, setShow] = useState(false)
+    const createMarkdown = () => {
+        return { __html: marked(children.content) }
+    }
 
     return (
         <div className="single-note note-size">
+            <div className="scaled-markdown"
+                dangerouslySetInnerHTML={createMarkdown()}
+                onClick={() => setShow(!show)}
+            />
             <div
                 className="show-note"
-                onClick={() => setShow(!show)}>
-                {children.name}
-            </div>
+                onClick={() => setShow(!show)}
+            />
             <div>
                 {show &&
                     <Editor

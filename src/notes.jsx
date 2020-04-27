@@ -12,7 +12,7 @@ const Notes = (props) => {
     }
 
     return (
-        <div className="single-note note-size">
+        <div className="single-note">
             <div className="scaled-markdown"
                 dangerouslySetInnerHTML={createMarkdown()}
                 onClick={() => setShow(!show)}

@@ -84,6 +84,7 @@ const Editor = (props) => {
                             } while (i == stateNotes.length++)
                         })
                         setNotes(newStateNotes)
+                        setShow(false)
                         // console.log(newStateNotes)
                     }}
                     children={(

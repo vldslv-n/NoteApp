@@ -11,7 +11,7 @@ import "./button.css"
 let initialState = JSON.parse(localStorage.getItem('NoteApp')) || {
     data: []
 }
-console.log(initialState)
+// console.log(initialState)
 
 const ShowNotes = () => {
     const [stateNotes, setNotes] = useState(initialState.data);
@@ -24,7 +24,7 @@ const ShowNotes = () => {
                 Welcome to simple Note App!
             </header>
             <div className="all-notes">
-                <button name="noteButt" className="add-butt"
+                <button name="noteBtn" className="add-btn"
                     onClick={() => {
                         function uuidv4() {
                             return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
@@ -72,8 +72,5 @@ const ShowNotes = () => {
         </div>
     )
 }
-
-
-
 
 ReactDOM.render(<ShowNotes />, document.getElementById("app"))

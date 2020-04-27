@@ -1,5 +1,3 @@
-// TODO: [X]: Добавить кнопку режима редактирования. Рендерит по клику textarea или Markdown
-
 import React, { useState } from "react"
 import marked from "marked"
 import "./editor.css"
@@ -32,7 +30,6 @@ Date.prototype.timeNow = function () {
     return ((this.getHours() < 10) ? "0" : "") + this.getHours() + ":" + ((this.getMinutes() < 10) ? "0" : "") + this.getMinutes() + ":" + ((this.getSeconds() < 10) ? "0" : "") + this.getSeconds();
 }
 
-
 const Editor = (props) => {
     const { stateNotes, setNotes, children, show, setShow } = props
     const [stateEdit, setEdit] = useState(true)
@@ -40,6 +37,7 @@ const Editor = (props) => {
         return { __html: marked(children.content) };
     }
     let lastEdit = "Last Edit: " + new Date().today() + " @ " + new Date().timeNow()
+
     return (
         <div className="editor-container">
             <div className="opacitier" />
@@ -73,9 +71,9 @@ const Editor = (props) => {
                         dangerouslySetInnerHTML={createMarkdown()} />
                 }
                 <button
-                    name='delButt'
+                    name='delBtn'
                     title='Delete Note'
-                    className="del-butt"
+                    className="del-btn"
                     onClick={() => {
                         stateNotes.splice(children.id, 1)
                         let newStateNotes = stateNotes.map((element) => {
@@ -86,7 +84,7 @@ const Editor = (props) => {
                             } while (i == stateNotes.length++)
                         })
                         setNotes(newStateNotes)
-                        console.log(newStateNotes)
+                        // console.log(newStateNotes)
                     }}
                     children={(
                         <svg
@@ -107,7 +105,7 @@ const Editor = (props) => {
                     )}
                 />
                 <button
-                    className='back-butt'
+                    className='back-btn'
                     title='Back to Notes'
                     onClick={() => { setShow(false) }}
                     children={(

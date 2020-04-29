@@ -1,29 +1,23 @@
 import React, { useState } from "react"
-import marked from "marked"
-import "./notes.css"
-import "./index.css"
-import Editor from "./editor.jsx"
+import Editor from "../Editor/index.jsx"
+import createMarkdown from 'utils/convertMarkdown'
+import "./styles"
+
 
 const Notes = (props) => {
-    const { stateNotes, setNotes, children } = props
+    const { children } = props
     const [show, setShow] = useState(false)
-    const createMarkdown = () => {
-        return { __html: marked(children.content) }
-    }
 
     return (
         <div className="single-note">
             <div className="scaled-markdown"
-                dangerouslySetInnerHTML={createMarkdown()}
+                dangerouslySetInnerHTML={createMarkdown(children.content)}
                 onClick={() => setShow(!show)}
             />
             <div>
                 {show &&
                     <Editor
-                        stateNotes={stateNotes}
-                        setNotes={setNotes}
                         children={children}
-                        show={show}
                         setShow={setShow}
                     />
                 }

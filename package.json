@@ -5,9 +5,11 @@
         "build": "webpack"
     },
     "dependencies": {
+        "@reduxjs/toolkit": "^1.3.5",
         "marked": "^1.0.0",
         "react": "16.13.1",
-        "react-dom": "16.13.1"
+        "react-dom": "16.13.1",
+        "react-redux": "^7.2.0"
     },
     "devDependencies": {
         "@babel/core": "7.9.0",

@@ -23,6 +23,10 @@ const config = {
             },
         ]
     },
+    resolve: {
+        modules: ["node_modules", __dirname + "/src"],
+        extensions: ['.js', '.jsx', '.css']
+    },
     plugins: [
         new CopyWebpack([
             {

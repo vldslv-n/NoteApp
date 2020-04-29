@@ -14,7 +14,7 @@ export default {
             }
             Notes.init(savedData)
         } catch (error) {
-            console.warn('Данные в локал сторейдж — хуйня ебаная')
+            console.warn('Данные в локал сторейдж — не корректны')
         } finally {
             App.resolve()
         }

@@ -1,6 +1,6 @@
 import React from "react"
 import { useSelector } from 'react-redux'
-import Notes from "../Note/index.jsx"
+import Notes from "../Note"
 import Actions from '../../actions'
 import "./styles"
 

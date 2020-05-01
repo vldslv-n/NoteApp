@@ -2,17 +2,20 @@ const CopyWebpack = require('copy-webpack-plugin')
 
 const config = {
     entry: {
-        app: __dirname + "/src/index.jsx",
+        app: __dirname + "/src/index.tsx",
     },
     module: {
         rules: [
             {
-                test: /\.jsx?$/,
+                test: /\.tsx?$/,
                 use: {
                     loader: 'babel-loader',
                     options: {
                         presets: [
-                            "@babel/preset-react"
+                            "@babel/preset-react", "@babel/preset-typescript"
+                        ],
+                        plugins: ["@babel/plugin-proposal-class-properties",
+                            "@babel/plugin-proposal-object-rest-spread"
                         ]
                     }
                 }
@@ -25,7 +28,7 @@ const config = {
     },
     resolve: {
         modules: ["node_modules", __dirname + "/src"],
-        extensions: ['.js', '.jsx', '.css']
+        extensions: ['.ts', '.tsx', '.css', '.js']
     },
     plugins: [
         new CopyWebpack([

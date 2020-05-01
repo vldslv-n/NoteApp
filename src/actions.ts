@@ -1,5 +1,5 @@
 import store, { App, Notes } from "store"
-import createNewId from 'utils/createId'
+import { uuid } from 'uuidv4';
 import getDate from 'utils/getDate'
 
 export default {
@@ -21,7 +21,7 @@ export default {
     },
     addNote: () => {
         const newNote = {
-            id: createNewId(),
+            id: uuid(),
             lastEdit: '',
             content: ''
         }

@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { bindActionCreators } from 'redux'
-import appSlice from './AppSlice.js'
-import notesSlice from './NotesSlice.js'
+import appSlice from './AppSlice'
+import notesSlice from './NotesSlice'
 
 const store = configureStore({
     reducer: {

@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import Editor from "../Editor/index.jsx"
+import Editor from "../Editor"
 import createMarkdown from 'utils/convertMarkdown'
 import "./styles"
 

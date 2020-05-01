@@ -4,12 +4,22 @@ import Notes from "../Note"
 import Actions from '../../actions'
 import "./styles"
 
+type Note = {
+    id: string
+    content: string
+    lastEdit: string
+}
+interface NoteState {
+    data: Note[]
+}
+interface BoardState {
+    DefaultRootState: object
+    notes: NoteState
+}
 
 const Board = () => {
-    const { data } = useSelector((state) => state.notes)
-    // console.log("render: ", data);
+    const { data } = useSelector((state: BoardState) => state.notes)
     localStorage.setItem('NoteApp', JSON.stringify(data))
-    // console.log(localStorage);
 
     return (
         <div className="container">

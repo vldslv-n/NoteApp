@@ -15,11 +15,10 @@ marked.setOptions({
     "silent": false,
     "smartLists": false,
     "smartypants": false,
-    "tokenizer": null,
     "xhtml": false
 })
 
-const createMarkdown = (content) => {
+const createMarkdown = (content: string) => {
     return { __html: marked(content) };
 }
 

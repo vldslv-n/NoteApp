@@ -4,8 +4,18 @@ import BackIcon from 'components/Editor/icons/Back'
 import DeleteIcon from 'components/Editor/icons/Delete'
 import PencilIcon from 'components/Editor/icons/Pencil'
 import EyeIcon from 'components/Editor/icons/Eye'
-
-const SideBar = (props) => {
+type Note = {
+    id: string
+    content: string
+    lastEdit: string
+}
+interface BarProps {
+    children: Note
+    setEdit: React.Dispatch<React.SetStateAction<boolean>>
+    stateEdit: boolean
+    setShow: React.Dispatch<React.SetStateAction<boolean>>
+}
+const SideBar = (props: BarProps) => {
     const { setEdit, stateEdit, setShow, children } = props
 
     return (

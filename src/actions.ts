@@ -2,18 +2,19 @@ import store, { App, Notes } from "store"
 import { uuid } from 'uuidv4';
 import getDate from 'utils/getDate'
 
+
 export default {
     init: () => {
         try {
             App.pending()
             const savedRawData = localStorage.getItem('NoteApp')
-            const savedData = JSON.parse(savedRawData)
-            console.log(savedData);
+            const savedData: [] = JSON.parse(savedRawData)
             if (!Array.isArray(savedData)) {
                 throw {}
             }
             Notes.init(savedData)
         } catch (error) {
+            App.setError()
             console.warn('Данные в локал сторейдж — не корректны')
         } finally {
             App.resolve()
@@ -27,7 +28,7 @@ export default {
         }
         Notes.add(newNote)
     },
-    setNote: (id, content) => {
+    setNote: (id: string, content: string) => {
         let nextNotes = store.getState().notes.data.map((element) => {
             if (element.id == id) {
                 let nextElement = {
@@ -42,7 +43,7 @@ export default {
         })
         Notes.changeById(nextNotes)
     },
-    removeNote: (id) => {
+    removeNote: (id: string) => {
         const data = store.getState().notes.data
         const newStateNotes = data.filter((element) => element.id != id)
         Notes.deleteById(newStateNotes)

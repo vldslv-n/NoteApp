@@ -1,16 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
+import Types from "types"
 
-type Error = {
-    code: number
-    message: string
-}
-
-interface AppState {
-    loading: string
-    error: null | Error
-}
-
-const initialState: AppState = {
+const initialState: Types.AppState = {
     loading: "idle",
     error: null
 }
@@ -28,7 +19,7 @@ const appSlice = createSlice({
         resolve(state) {
             state.loading = 'resolve'
         },
-        setError(state, action: { payload: Error }) {
+        setError(state, action: { payload: Types.Error }) {
             state.error = action.payload
         }
     }

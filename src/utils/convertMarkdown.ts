@@ -1,17 +1,17 @@
 import marked from "marked"
 
 marked.setOptions({
-    "baseUrl": null,
+    "baseUrl": undefined,
     "breaks": false,
     "gfm": true,
     "headerIds": true,
     "headerPrefix": "",
-    "highlight": null,
+    "highlight": undefined,
     "langPrefix": "language-",
     "mangle": true,
     "pedantic": false,
     "sanitize": false,
-    "sanitizer": null,
+    "sanitizer": undefined,
     "silent": false,
     "smartLists": false,
     "smartypants": false,

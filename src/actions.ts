@@ -1,20 +1,20 @@
 import store, { App, Notes } from "store"
 import { uuid } from 'uuidv4';
 import getDate from 'utils/getDate'
-
+import Types from "types"
 
 export default {
     init: () => {
         try {
             App.pending()
             const savedRawData = localStorage.getItem('NoteApp')
-            const savedData: [] = JSON.parse(savedRawData)
+            const savedData: Types.Note[] = JSON.parse(savedRawData as string)
+            console.log(savedData);
             if (!Array.isArray(savedData)) {
                 throw {}
             }
             Notes.init(savedData)
         } catch (error) {
-            App.setError()
             console.warn('Данные в локал сторейдж — не корректны')
         } finally {
             App.resolve()

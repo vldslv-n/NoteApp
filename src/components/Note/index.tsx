@@ -1,17 +1,10 @@
 import React, { useState } from "react"
 import Editor from "../Editor"
 import createMarkdown from 'utils/convertMarkdown'
+import Types from "types"
 import "./styles"
-type Note = {
-    id: string
-    content: string
-    lastEdit: string
-}
-interface NotesProps {
-    children: Note
-}
 
-const Notes = (props: NotesProps) => {
+const Notes = (props: Types.NotesProps) => {
     const { children } = props
     const [show, setShow] = useState(false)
 

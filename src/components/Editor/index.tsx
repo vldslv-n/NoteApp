@@ -2,17 +2,10 @@ import React, { useState } from "react"
 import Actions from '../../actions'
 import SideBar from 'components/SideBar'
 import createMarkdown from 'utils/convertMarkdown'
+import Types from "types"
 import "./styles"
-type Note = {
-    id: string
-    content: string
-    lastEdit: string
-}
-interface EditorProps {
-    children: Note
-    setShow: React.Dispatch<React.SetStateAction<boolean>>
-}
-const Editor = (props: EditorProps) => {
+
+const Editor = (props: Types.EditorProps) => {
     const { children, setShow } = props
     const [stateEdit, setEdit] = useState(true)
     return (

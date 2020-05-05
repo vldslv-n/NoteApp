@@ -1,18 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
+import Types from "types"
 
-type Action = {
-    payload: Note[]
-}
-type Note = {
-    id: string
-    content: string
-    lastEdit: string
-}
-interface NoteState {
-    data: Note[]
-}
-
-const initialState: NoteState = {
+const initialState: Types.NoteState = {
     data: []
 }
 
@@ -20,16 +9,16 @@ const notesSlice = createSlice({
     name: 'notes',
     initialState,
     reducers: {
-        init(state, action: Action) {
+        init(state, action: Types.Action) {
             state.data = action.payload
         },
-        add(state, action: { payload: Note }) {
+        add(state, action: { payload: Types.Note }) {
             state.data.push(action.payload)
         },
-        changeById(state, action: Action) {
+        changeById(state, action: Types.Action) {
             state.data = action.payload
         },
-        deleteById(state, action: Action) {
+        deleteById(state, action: Types.Action) {
             state.data = action.payload
         },
         clear(state) {

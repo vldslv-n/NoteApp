@@ -3,22 +3,10 @@ import { useSelector } from 'react-redux'
 import Notes from "../Note"
 import Actions from '../../actions'
 import "./styles"
-
-type Note = {
-    id: string
-    content: string
-    lastEdit: string
-}
-interface NoteState {
-    data: Note[]
-}
-interface BoardState {
-    DefaultRootState: object
-    notes: NoteState
-}
+import Types from "types"
 
 const Board = () => {
-    const { data } = useSelector((state: BoardState) => state.notes)
+    const { data } = useSelector((state: Types.BoardState) => state.notes)
     localStorage.setItem('NoteApp', JSON.stringify(data))
 
     return (
